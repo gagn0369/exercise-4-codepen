@@ -26,3 +26,8 @@
   white-space: normal;
   overflow: visible;
 }
+
+@mixin center{
+  position: relative;
+  text-align: center;
+}

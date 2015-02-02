@@ -12,27 +12,76 @@ html {
 	text-size-adjust: 100%;
 }
 
+ //PAGE BORDERS:
+
+html:before,html:after,body:before,body:after{
+    content:"";
+    background:$teal;
+    position:fixed;
+    display:block;
+    z-index:5;
+}
+
+html:before{
+    height:10px;
+    left:0;
+    right:0;
+    top:0;
+}
+html:after{
+    width:10px;
+    top:0;
+    right:0;
+    bottom:0;
+}
+body:before{
+    height:10px;
+    right:0;
+    bottom:0;
+    left:0;
+}
+body:after{
+    width:10px;
+    top:0;
+    bottom:0;
+    left:0;
+}
+
+//end of borders
 
 *, *:before, *:after {
 	box-sizing: inherit;
 }
 
 body {
-  background-color: #F46A6A;
-  color:#fff;
-  max-width:800px;
-  margin: 100px auto 0;
-  text-align: center;
-  display: table;
+  background-color: white;
+  font-family: $yanone;
+  margin-top: 2em;
+}
+
+.counter-container{
+  display: block;
+  padding: 1em;
 }
 
 .counter {
-  display: table-cell;
-  margin:1.5%;
-  font-size:50px;
-  background-color: #FF6F6F;
-  width:200px;
-  border-radius: 50%;
-  height:200px;
-  vertical-align: middle;
+  @include center;
+  font-size:3em;
+  color: $dark-teal;
+}
+
+h3{
+  @include center;
+  color: $light-teal;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+@media only screen and (min-width : 45em){
+
+.counter-container{
+  display: inline;
+  padding: 1em;
+}
+
 }
